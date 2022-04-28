@@ -2,7 +2,7 @@ import { Expose, Transform } from 'class-transformer';
 
 export default class Movie {
 
-    @Expose({ name: 'uid' })
+    @Expose({ name: 'id' })
     id: number
 
     @Expose({ name: 'title' })
