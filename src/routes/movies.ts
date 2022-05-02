@@ -6,7 +6,7 @@ const moviesRouter = express.Router()
 
 moviesRouter.get('/', async (req, res, next) => {
     res.setHeader('Age', 0)
-    res.setHeader('Cache-Control', 'max-age=120')
+    res.setHeader('Cache-Control', 'max-age=86400') // 1 day
     res.setHeader('x-cache', 'hit')
 
     try {
@@ -37,7 +37,7 @@ moviesRouter.get('/', async (req, res, next) => {
 moviesRouter.get('/detail/:movieID', async (req, res, next) => {
     const movieID = Number(req.params['movieID'])
     res.setHeader('Age', 0)
-    res.setHeader('Cache-Control', 'max-age=10000')
+    res.setHeader('Cache-Control', 'max-age=86400') // 1 day
     res.setHeader('x-cache', 'hit')
 
     if(isNaN(movieID) || movieID <= 0) {
@@ -81,7 +81,7 @@ moviesRouter.get('/filter', async (req, res, next) => {
     }
 
     res.setHeader('Age', 0)
-    res.setHeader('Cache-Control', 'max-age=10000')
+    res.setHeader('Cache-Control', 'max-age=86400') // 1 day
     res.setHeader('x-cache', 'hit')
 
     try {
@@ -95,7 +95,7 @@ moviesRouter.get('/filter', async (req, res, next) => {
 
 moviesRouter.get('/popular', async (req, res, next) => {
     res.setHeader('Age', 0)
-    res.setHeader('Cache-Control', 'max-age=10000')
+    res.setHeader('Cache-Control', 'max-age=86400') // 1day
     res.setHeader('x-cache', 'hit')
 
     try {
